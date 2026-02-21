@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/a1743bri/public_html/git_lara
+    - /bin/cp -R * $DEPLOYPATH
