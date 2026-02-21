@@ -2,3 +2,9 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/a1743bri/public_html/git_lara
     - /bin/cp -R * $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - /usr/local/bin/composer install --no-dev --optimize-autoloader
+    - php artisan migrate --force
+    - php artisan config:cache
+    - php artisan route:cache
+    - php artisan view:cache
